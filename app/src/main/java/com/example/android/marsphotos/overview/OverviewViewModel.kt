@@ -49,7 +49,8 @@ class OverviewViewModel : ViewModel() {
     private fun getMarsPhotos() {
         viewModelScope.launch {
             try {
-                _status.value = MarsApi.client.getPhotos()
+                val result = MarsApi.client.getPhotos()
+                _status.value = "Success: ${result.size} Mars photos retrieved"
             } catch (e: Exception) {
                 _status.value = "Failure: ${e.message}"
             }
