@@ -42,6 +42,9 @@ class OverviewFragment : Fragment() {
     ): View? {
         val binding = FragmentOverviewBinding.inflate(inflater)
 
+        //Set adapter for RecyclerView
+        binding.photosGrid.adapter = PhotoGridAdapter()
+
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
 
